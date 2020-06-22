@@ -5,4 +5,7 @@ using UnityEngine;
 public interface IViewControllerFactory 
 {
     MainMenuViewController CreateMainMenuViewController();
+    SettingsMenuViewController CreateSettingsMenuViewController();
+
 }
+

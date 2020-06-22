@@ -1,14 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonView : MonoBehaviour
+public class ButtonView : View
 {
     Action _buttonCallback;
     [SerializeField] Text _labelText;
 
-    void Setup(Action buttonCallback, string labelText) {
+    public void Setup(Action buttonCallback, string labelText) {
         _buttonCallback = buttonCallback;
         _labelText.text = labelText;
 

@@ -14,5 +14,24 @@ public class MainMenuViewController : ViewController<MainMenuView>
 
   public void Setup() {
        View.Setup(Application.productName);
+
+       View.AddButton(PlayGame, "Play");
+       View.AddButton(ShowSettingsMenu, "Settings");
+       View.AddButton(QuitGame, "Quit");
+   }
+
+   void PlayGame () {
+
+   }
+   
+   void ShowSettingsMenu() {
+       SettingsMenuViewController viewController = _factory.CreateSettingsMenuViewController();
+       viewController.Setup();
+
+       _wireframe.PresentViewController(viewController);
+
+   }
+   void QuitGame() {
+
    }
 }
