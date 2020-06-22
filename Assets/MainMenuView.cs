@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MainMenuView : View 
+public class MainMenuView : View
 {
-    [SerializeField] private Text _titleText
+    [SerializeField] Text _titletext;
 
-    
-    public void Setup(string title)
-    {
-        
+    public void Setup(string title) {
+        _titletext.text = title;
     }
 }

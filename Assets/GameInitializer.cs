@@ -1,18 +1,20 @@
-﻿public class GameInitializer
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+  public class GameInitializer
 {
-    private SceneWireframe _wireframe;
+    SceneWireframe _wireframe;
+    IViewControllerFactory _factory;
 
-
-
-    public GameInitializer(SceneWireframe wireframe)
-    {
+    public GameInitializer(SceneWireframe wireframe, IViewControllerFactory factory) {
         _wireframe = wireframe;
+        _factory = factory;
     }
+    public void Init(){
+        MainMenuViewController viewController = _factory.CreateMainMenuViewController();
+        viewController.Setup();
 
-
-    public void Init()
-    {
-       
-       // _wireframe.PresentViewController(viewController);
+        _wireframe.PresentViewController(viewController);
     }
 }
