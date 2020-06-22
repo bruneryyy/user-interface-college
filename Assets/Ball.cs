@@ -24,8 +24,8 @@ public class Ball : MonoBehaviour
 
     private void Launch()
     {
-        float x = Random.Range(0, 2) == 0 ? -1 : 1;
-        float y = Random.Range(0, 2) == 0 ? -1 : 1;
+        int x = Random.Range(0, 2) == 0 ? -1 : 1;
+        int y = Random.Range(0, 2) == 0 ? -1 : 1;
         rb.velocity = new Vector2(speed * x, speed * y);
     }
 }

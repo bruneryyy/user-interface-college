@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+
     [Header("Ball")]
     public GameObject ball;
 
@@ -25,14 +29,19 @@ public class GameManager : MonoBehaviour
     public void Player1Scored()
     {
         Player1Score++;
-        Player1Text.GetComponent<TextMesh>().text = Player1Score.ToString();
-        
+        Player1Text.GetComponent<TMP_Text>().text = Player1Score.ToString();
+            ResetPosition();
     }
+        void Update() {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("MVC");
+
+        }
     public void Player2Scored()
     {
         Player2Score++;
-        Player2Text.GetComponent<TextMesh>().text = Player2Score.ToString();
-        
+        Player2Text.GetComponent<TMP_Text>().text = Player2Score.ToString();
+            ResetPosition();
     }
     private void ResetPosition()
     {
